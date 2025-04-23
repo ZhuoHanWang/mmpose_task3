@@ -53,7 +53,6 @@ def get_angle(keypoints):
     print("\n角度值(度):")
     for i, angle in enumerate(theta):
         print(f"点{i:02d}: {angle:.4f}°")
-
     angle_matrix = np.zeros([len(keypoints), len(keypoints)])
     for i in range(len(keypoints)):
         for j in range(len(keypoints)):
@@ -369,11 +368,12 @@ def show_cobb(results, annFile, detector_path, save_path, img_prefix=IMG_PREFIX)
     print(f"总共处理图像数: {len(results)}")
     print(f"保存路径: {save_path}")
 
-    cobb_visual_path = os.path.join(save_path, 'cobb_visual')
+    # 直接使用传入的save_path作为cobb_visual_path
+    cobb_visual_path = save_path
 
+    # 确保目录存在
     if not os.path.exists(cobb_visual_path):
         os.makedirs(cobb_visual_path)
-
 
     with open(annFile, 'r', encoding='utf-8') as file:
         ann = json.load(file)
@@ -562,6 +562,7 @@ def show_cobb(results, annFile, detector_path, save_path, img_prefix=IMG_PREFIX)
         print(f"\n图像 {img_name} 处理完成")
         print("=" * 50)
 
+    # 修改json保存路径
     cobb_json_path = os.path.join(cobb_visual_path, 'cobb')
     if not os.path.exists(cobb_json_path):
         os.makedirs(cobb_json_path)

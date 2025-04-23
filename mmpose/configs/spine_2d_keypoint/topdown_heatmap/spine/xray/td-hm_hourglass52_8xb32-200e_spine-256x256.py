@@ -2,7 +2,7 @@ _base_ = ['mmpose::_base_/default_runtime.py']
 # /root/task2/mmpose/configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_hourglass52_8xb32-210e_coco-384x384.py
 # runtime
 train_cfg = dict(max_epochs=200, val_interval=1)
-
+work_dir = '/pangyan/wzh/mmpose_task/task3/work_dirs_xray/{{fileBasenameNoExtension}}'
 # optimizer
 optim_wrapper = dict(optimizer=dict(
     type='Adam',

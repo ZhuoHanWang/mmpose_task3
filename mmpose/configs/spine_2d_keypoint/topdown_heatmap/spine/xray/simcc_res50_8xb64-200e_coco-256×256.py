@@ -2,11 +2,11 @@ _base_ = ['mmpose::_base_/default_runtime.py']
 # /root/task2/mmpose/configs/body_2d_keypoint/simcc/coco/simcc_res50_8xb64-210e_coco-256x192.py
 # runtime
 train_cfg = dict(max_epochs=200, val_interval=1)
-
+work_dir = '/pangyan/wzh/mmpose_task/task3/work_dirs_rgb/{{fileBasenameNoExtension}}'
 # optimizer
 optim_wrapper = dict(optimizer=dict(
     type='Adam',
-    lr=1e-3,
+    lr=1e-4,
 ))
 
 # learning policy
@@ -25,7 +25,7 @@ default_hooks = dict(checkpoint=dict(save_best='PCK@0.01', rule='greater'))
 
 # codec settings
 codec = dict(
-    type='SimCCLabel', input_size=(256, 256), sigma=6.0, simcc_split_ratio=2.0)
+    type='SimCCLabel', input_size=(512, 512), sigma=6.0, simcc_split_ratio=2.0)
 
 # model settings
 model = dict(

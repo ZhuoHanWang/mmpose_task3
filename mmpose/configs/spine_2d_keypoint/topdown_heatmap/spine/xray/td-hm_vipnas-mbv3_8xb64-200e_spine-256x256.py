@@ -2,7 +2,7 @@ _base_ = ['mmpose::_base_/default_runtime.py']
 # /root/task2/mmpose/configs/body_2d_keypoint/topdown_heatmap/coco/td-hm_vipnas-mbv3_8xb64-210e_coco-256x192.py
 # runtime
 train_cfg = dict(max_epochs=200, val_interval=1)
-
+work_dir = '/pangyan/wzh/mmpose_task/task3/work_dirs_rgb/{{fileBasenameNoExtension}}'
 # optimizer
 optim_wrapper = dict(optimizer=dict(
     type='Adam',

@@ -3,7 +3,7 @@ _base_ = ['mmpose::_base_/default_runtime.py']
 
 # runtime
 train_cfg = dict(max_epochs=200, val_interval=1)
-
+work_dir = '/pangyan/wzh/mmpose_task/task3/work_dirs_rgb/{{fileBasenameNoExtension}}'
 # optimizer
 optim_wrapper = dict(optimizer=dict(
     type='Adam',

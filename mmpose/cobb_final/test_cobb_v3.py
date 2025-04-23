@@ -30,7 +30,12 @@ def main():
     with open(args.result, 'r') as f:
         outputs = json.load(f)
     
-    save_path = '/pangyan/wzh/mmpose_task/task3/model_result_cobb/cobb_final_visual'
+    # 修改保存路径，使用result_name作为子文件夹
+    base_save_path = '/pangyan/wzh/mmpose_task/task3/model_result_cobb/cobb_final_visual'
+    save_path = os.path.join(base_save_path, result_name)
+    
+    # 确保目录存在
+    os.makedirs(save_path, exist_ok=True)
     
     # 设置日志文件路径
     log_file = os.path.join(save_path, f"{result_name}.log")

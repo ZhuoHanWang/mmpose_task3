@@ -2,7 +2,7 @@ _base_ = ['mmpose::_base_/default_runtime.py']
 # /root/task2/mmpose/projects/skps/configs/td-hm_hrnetv2-w18_skps-1xb16-160e_cofw-256x256.py
 # runtime
 train_cfg = dict(max_epochs=200, val_interval=1)
-
+work_dir = '/pangyan/wzh/mmpose_task/task3/work_dirs_rgb/{{fileBasenameNoExtension}}'
 # optimizer
 optim_wrapper = dict(optimizer=dict(
     type='Adam',
